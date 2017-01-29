@@ -29,12 +29,12 @@ test:
   password:
   socket: /opt/lampp/var/mysql/mysql.sock
 
-production:
-  adapter: postgresql
-  encoding: utf8
-  reconnect: false
-  database: hw_8_7
-  pool: 5
-  username: root
-  password:
-  socket: /opt/lampp/var/mysql/mysql.sock
+#production:
+#  adapter: postgresql
+#  encoding: utf8
+#  reconnect: false
+#  database: hw_8_7
+#  pool: 5
+#  username: root
+#  password:
+#  socket: /opt/lampp/var/mysql/mysql.sock

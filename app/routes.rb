@@ -82,12 +82,6 @@ get '/posts' do
   erb :'posts/index'
 end
 
-# get '/users/:user_id/posts/show_all' do
-#   @user = User.find(params[:id])
-#   @posts = Post.where(user_id: params[:id])
-#   erb :'/posts/show_all'
-# end
-
 get '/users/:id/posts/new' do
   @user = User.find(params[:id])
   @title = 'Create new post'
@@ -112,13 +106,7 @@ post '/users/:id/posts/new/' do
   #   end
   # end
 end
-#
-# get 'users/:id/posts/:id/edit' do
-#   @title = 'Update post'
-#   @post = Post.find(user_id: params[:id])
-#   erb :'posts/edit'
-# end
-#
+
 get '/users/:id/posts/:post_id/edit' do
   @post = Post.find(params[:post_id])
   @user = @post.user
@@ -131,18 +119,8 @@ put '/users/:user_id/posts/:id/edit' do
   redirect "/users/#{params[:user_id]}/"
 end
 
-# get '/users/:user_id/posts/:id/delete/' do
-#   @title = "Confirm deletion of post #{params[:id]}"
-#   @post = Post.find(params[:id])
-#   erb :'posts/delete'
-# end
-
 delete '/users/:user_id/posts/:id/' do
   @user = User.find(params[:user_id])
-  # @post = @user.posts.find(params[:id]).delete
-  # Post.find(params[:id]).destroy
-  # @posts.find(params[:id]).destroy
-
   @post = @user.posts.find_by(id: params[:id])
   @post.destroy
 
@@ -151,7 +129,6 @@ end
 
 not_found do
   @title = 'Page not found'
-  # создайте для неё шаблон 404.erb
   erb :'404'
 end
 
