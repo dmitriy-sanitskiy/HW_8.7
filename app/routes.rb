@@ -94,7 +94,7 @@ post '/users/:id/posts/new/' do
   params.delete 'submit'
   @user = User.find(params[:id])
   @user.posts.create title: params[:title],
-                    body: params[:body]
+                     body: params[:body]
   redirect "/users/#{params[:id]}/"
   # respond_to do |format|
   #   if @user.save

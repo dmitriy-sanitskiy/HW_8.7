@@ -2,7 +2,7 @@
 <a href="/users/<%= @user.id %>/delete/" type="submit">delete this user</a><br>
 
 <form action="/users/<%= @user.id %>/edit" method="post">
-  <input name="_method" type="hidden" value="put" />
+  <input name="_method" type="hidden" value="put"/>
 
   <label for="name"><strong>User Name:</strong></label>
   <input id="name" type="text" name="name" value="" style="width: 250px;"><br><br>

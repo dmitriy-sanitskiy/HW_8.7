@@ -7,9 +7,11 @@
     <p><%= post.body %></p>
     <small><%= post.created_at %></small>
     <a href="/users/<%=post.user_id%>/posts/<%=post.id%>/edit">Edit post</a>
+
     <form action="/users/<%=post.user_id%>/">
       <input type="submit" value="Delete post"/>
     </form>
+
     <form action="/users/<%=post.user_id%>/" method="post">
       <input type="hidden" name="_method" value="delete">
       <input type="submit" value="Delete">
